@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Puvi Naturals and Organics — Organic Native Rice &amp; Provisions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@500;700;800;900&family=Mukta:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --paddy-dark:#1c2a1a;
+    --paddy-dark-2:#233322;
+    --husk-cream:#f3ead3;
+    --husk-cream-2:#ece0c2;
+    --ink:#26301f;
+    --clay:#4f6b3a;
+    --clay-deep:#34481f;
+    --gold:#c79431;
+    --gold-soft:#e0b95f;
+    --leaf:#51643c;
+    --leaf-deep:#3a4a2a;
+    --grain-black:#2a241f;
+    --grain-red:#8c4632;
+    --grain-white:#efe7d2;
+    --grain-cream:#ddc98a;
+    --grain-amber:#c0883a;
+    --max:1120px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Mukta', sans-serif;
+    background:var(--husk-cream);
+    color:var(--ink);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  img,svg{display:block; max-width:100%;}
+  a{color:inherit; text-decoration:none;}
+  .wrap{max-width:var(--max); margin:0 auto; padding:0 28px;}
+  .eyebrow{
+    font-family:'JetBrains Mono', monospace;
+    font-size:12.5px;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    font-weight:500;
+  }
+  h1,h2,h3{font-family:'Catamaran', sans-serif; font-weight:800; line-height:1.08;}
+  .btn{
+    display:inline-flex; align-items:center; gap:10px;
+    padding:14px 26px;
+    border-radius:3px;
+    font-family:'Catamaran', sans-serif;
+    font-weight:700;
+    font-size:15.5px;
+    letter-spacing:.01em;
+    border:1.5px solid transparent;
+    cursor:pointer;
+    transition:transform .15s ease, background .2s ease, border-color .2s ease;
+  }
+  .btn:hover{transform:translateY(-2px);}
+  .btn-solid{background:var(--gold); color:var(--paddy-dark);}
+  .btn-solid:hover{background:var(--gold-soft);}
+  .btn-outline{border-color:rgba(243,234,211,.45); color:var(--husk-cream);}
+  .btn-outline:hover{border-color:var(--husk-cream); background:rgba(243,234,211,.08);}
+
+  /* ---------- NAV ---------- */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:rgba(33,29,21,.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid rgba(243,234,211,.12);
+  }
+  nav{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:16px 0;
+  }
+  .logo{
+    font-family:'Catamaran', sans-serif; font-weight:900; font-size:21px;
+    color:var(--husk-cream); letter-spacing:.01em;
+    display:flex; flex-direction:column; line-height:1.05;
+  }
+  .logo span{
+    font-family:'Mukta', sans-serif; font-weight:400; font-size:11px;
+    color:var(--gold-soft); letter-spacing:.16em; text-transform:uppercase;
+  }
+  .navlinks{display:flex; gap:30px; align-items:center;}
+  .navlinks a{
+    font-size:14.5px; color:rgba(243,234,211,.78); font-weight:500;
+    transition:color .2s ease;
+  }
+  .navlinks a:hover{color:var(--gold-soft);}
+  .nav-cta{
+    background:var(--gold); color:var(--paddy-dark);
+    padding:9px 18px; border-radius:3px; font-weight:700; font-size:13.5px;
+  }
+  .menu-btn{display:none; background:none; border:none; color:var(--husk-cream); font-size:24px; cursor:pointer;}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    background:var(--paddy-dark);
+    color:var(--husk-cream);
+    overflow:hidden;
+    padding:90px 0 130px;
+  }
+  .hero-dots{
+    position:absolute; inset:0; opacity:.16; pointer-events:none;
+  }
+  .hero-inner{position:relative; z-index:2; max-width:680px;}
+  .hero .eyebrow{color:var(--gold-soft); margin-bottom:18px;}
+  .hero h1{
+    font-size:clamp(38px, 6vw, 62px);
+    color:var(--husk-cream);
+    margin-bottom:14px;
+  }
+  .rating-badge{
+    display:inline-flex; align-items:center; gap:7px;
+    background:rgba(224,185,95,.12);
+    border:1px solid rgba(224,185,95,.35);
+    color:var(--gold-soft);
+    font-family:'JetBrains Mono', monospace;
+    font-size:13px;
+    padding:7px 14px;
+    border-radius:3px;
+    margin-bottom:20px;
+  }
+  .rating-badge span{color:rgba(243,234,211,.75);}
+  .hero .tamil-name{
+    font-family:'Catamaran', sans-serif; font-weight:600; font-size:20px;
+    color:rgba(243,234,211,.6); letter-spacing:.04em; margin-bottom:26px;
+  }
+  .hero p.lede{
+    font-size:18px; color:rgba(243,234,211,.82); max-width:520px; margin-bottom:36px;
+  }
+  .hero-ctas{display:flex; gap:16px; flex-wrap:wrap;}
+  .kolam-divider{
+    position:absolute; right:-40px; bottom:-60px; width:300px; opacity:.9; z-index:1;
+  }
+
+  /* ---------- SECTION SHELL ---------- */
+  section{padding:90px 0;}
+  .section-head{max-width:600px; margin-bottom:54px;}
+  .section-head .eyebrow{color:var(--clay-deep); margin-bottom:14px;}
+  .section-head h2{font-size:clamp(30px,4vw,42px); color:var(--ink);}
+  .section-head p{margin-top:14px; font-size:16.5px; color:#5c5240;}
+
+  /* ---------- FEATURED FIVE ---------- */
+  .featured{background:var(--husk-cream);}
+  .five-grid{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:18px;
+  }
+  .grain-card{
+    background:#fffdf6;
+    border:1px solid rgba(42,35,22,.1);
+    border-radius:4px;
+    overflow:hidden;
+    display:flex; flex-direction:column;
+    transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .grain-card:hover{transform:translateY(-4px); box-shadow:0 14px 30px -18px rgba(42,35,22,.35);}
+  .swatch{
+    height:190px;
+    position:relative;
+    display:flex; align-items:flex-end; justify-content:flex-start;
+    padding:10px;
+    overflow:hidden;
+  }
+  .swatch img{
+    position:absolute; inset:0; width:100%; height:100%;
+    object-fit:cover;
+  }
+  .swatch .grain-num{
+    position:relative; z-index:2;
+    font-family:'JetBrains Mono', monospace; font-size:11px; color:rgba(255,255,255,.9);
+    background:rgba(38,48,31,.55);
+    padding:2px 7px; border-radius:2px;
+  }
+  .card-body{padding:18px 16px 20px; display:flex; flex-direction:column; gap:8px; flex:1;}
+  .card-body h3{font-size:17px; color:var(--ink); font-weight:800;}
+  .card-body .tamil{font-size:12.5px; color:var(--clay-deep); font-weight:600; font-family:'Catamaran',sans-serif;}
+  .card-body p{font-size:13.6px; color:#5c5240; flex:1;}
+  .photo-slot{
+    margin-top:6px;
+    border:1.5px dashed rgba(42,35,22,.28);
+    border-radius:3px;
+    padding:14px 8px;
+    text-align:center;
+    font-family:'JetBrains Mono', monospace;
+    font-size:10.5px;
+    color:#8a7e63;
+    letter-spacing:.02em;
+  }
+
+  /* ---------- WHY ORGANIC ---------- */
+  .why{background:var(--leaf-deep); color:var(--husk-cream);}
+  .why .section-head .eyebrow{color:var(--grain-cream);}
+  .why .section-head h2{color:var(--husk-cream);}
+  .why .section-head p{color:rgba(243,234,211,.75);}
+  .why-layout{
+    display:grid; grid-template-columns:0.85fr 1.15fr; gap:46px; align-items:stretch;
+  }
+  .why-photo{position:relative; border-radius:4px; overflow:hidden; min-height:380px;}
+  .why-photo img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover;}
+  .why-caption{
+    position:absolute; left:0; right:0; bottom:0; z-index:2;
+    padding:20px 22px 18px;
+    background:linear-gradient(transparent, rgba(28,42,26,.9));
+    color:var(--husk-cream); font-size:14.5px; font-style:italic;
+  }
+  .principles{
+    display:grid; grid-template-columns:repeat(2,1fr); gap:24px;
+  }
+  .principle{
+    border-top:2px solid rgba(243,234,211,.25);
+    padding-top:20px;
+  }
+  .principle svg{width:34px; height:34px; margin-bottom:18px;}
+  .principle h3{font-size:16.5px; color:var(--gold-soft); margin-bottom:8px; font-weight:700;}
+  .principle p{font-size:14px; color:rgba(243,234,211,.72);}
+
+  /* ---------- REVIEWS ---------- */
+  .reviews{background:var(--husk-cream);}
+  .review-grid{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:20px;
+  }
+  .review-card{
+    background:#fffdf6;
+    border:1px solid rgba(38,48,31,.1);
+    border-top:2px solid var(--clay);
+    border-radius:4px;
+    padding:22px 20px;
+  }
+  .review-card .stars{color:var(--gold); font-size:13px; margin-bottom:12px; letter-spacing:2px;}
+  .review-card p:last-child{font-size:14.5px; color:#5c5240; font-style:italic;}
+
+  /* ---------- FULL CATALOG ---------- */
+  .catalog{background:var(--husk-cream-2);}
+  .catalog-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:0 48px;
+    border-top:1px solid rgba(42,35,22,.14);
+  }
+  .catalog-item{
+    display:flex; align-items:center; gap:14px;
+    padding:18px 0;
+    border-bottom:1px solid rgba(42,35,22,.14);
+  }
+  .catalog-item .dot{
+    width:9px; height:9px; border-radius:50%;
+    background:var(--clay); flex-shrink:0;
+  }
+  .catalog-item .names{flex:1;}
+  .catalog-item .names .en{font-weight:700; font-size:16px; color:var(--ink);}
+  .catalog-item .names .alt{font-size:12.5px; color:#8a7e63; margin-left:6px; font-style:italic;}
+  .catalog-item .tag{
+    font-family:'JetBrains Mono', monospace; font-size:11px;
+    color:var(--leaf); letter-spacing:.02em; white-space:nowrap;
+  }
+  .catalog-note{
+    margin-top:34px; padding:22px 24px;
+    background:rgba(79,107,58,.09);
+    border-left:3px solid var(--clay);
+    font-size:14.5px; color:#5c5240;
+  }
+
+  /* ---------- CONTACT / FOOTER ---------- */
+  footer{background:var(--paddy-dark); color:var(--husk-cream); padding:80px 0 36px; position:relative; overflow:hidden;}
+  .footer-grid{display:grid; grid-template-columns:1.3fr 1fr 1fr; gap:50px; padding-bottom:54px; border-bottom:1px solid rgba(243,234,211,.14);}
+  .footer-grid h3{font-size:13px; letter-spacing:.1em; text-transform:uppercase; color:var(--gold-soft); margin-bottom:18px; font-weight:600; font-family:'Mukta',sans-serif;}
+  .footer-brand .logo{margin-bottom:14px;}
+  .footer-brand p{font-size:14.5px; color:rgba(243,234,211,.7); max-width:300px;}
+  .footer-grid a, .footer-grid p.line{display:block; font-size:14.5px; color:rgba(243,234,211,.78); margin-bottom:10px;}
+  .footer-grid a:hover{color:var(--gold-soft);}
+  .bottom-bar{
+    padding-top:26px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;
+    font-size:12.5px; color:rgba(243,234,211,.45);
+  }
+
+  @media (max-width: 920px){
+    .navlinks{display:none;}
+    .menu-btn{display:block;}
+    .five-grid{grid-template-columns:repeat(2,1fr);}
+    .review-grid{grid-template-columns:1fr;}
+    .why-layout{grid-template-columns:1fr;}
+    .principles{grid-template-columns:repeat(2,1fr);}
+    .catalog-grid{grid-template-columns:1fr;}
+    .footer-grid{grid-template-columns:1fr; gap:34px;}
+  }
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    .btn,.grain-card{transition:none;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="wrap">
+    <a href="#" class="logo">Puvi Naturals<span>and Organics &nbsp;·&nbsp; Kakkalur</span></a>
+    <div class="navlinks">
+      <a href="#five">Our Five</a>
+      <a href="#why">Why Organic</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#granary">Full Granary</a>
+      <a href="#contact">Contact</a>
+      <a href="#contact" class="nav-cta">Order Now</a>
+    </div>
+    <button class="menu-btn" aria-label="Menu">&#9776;</button>
+  </nav>
+</header>
+
+<section class="hero">
+  <svg class="hero-dots" width="100%" height="100%" viewBox="0 0 700 500" preserveAspectRatio="xMaxYMax slice" xmlns="http://www.w3.org/2000/svg">
+    <g fill="#e0b95f">
+      <circle cx="60" cy="40" r="2.4"/><circle cx="120" cy="40" r="2.4"/><circle cx="180" cy="40" r="2.4"/><circle cx="240" cy="40" r="2.4"/><circle cx="300" cy="40" r="2.4"/><circle cx="360" cy="40" r="2.4"/><circle cx="420" cy="40" r="2.4"/>
+      <circle cx="60" cy="100" r="2.4"/><circle cx="120" cy="100" r="2.4"/><circle cx="180" cy="100" r="2.4"/><circle cx="240" cy="100" r="2.4"/><circle cx="300" cy="100" r="2.4"/><circle cx="360" cy="100" r="2.4"/><circle cx="420" cy="100" r="2.4"/>
+      <circle cx="60" cy="160" r="2.4"/><circle cx="120" cy="160" r="2.4"/><circle cx="180" cy="160" r="2.4"/><circle cx="240" cy="160" r="2.4"/><circle cx="300" cy="160" r="2.4"/><circle cx="360" cy="160" r="2.4"/><circle cx="420" cy="160" r="2.4"/>
+      <circle cx="60" cy="220" r="2.4"/><circle cx="120" cy="220" r="2.4"/><circle cx="180" cy="220" r="2.4"/><circle cx="240" cy="220" r="2.4"/><circle cx="300" cy="220" r="2.4"/><circle cx="360" cy="220" r="2.4"/><circle cx="420" cy="220" r="2.4"/>
+    </g>
+  </svg>
+
+  <svg class="kolam-divider" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <g stroke="#e0b95f" stroke-width="1.4" fill="none" opacity=".85">
+      <g>
+        <ellipse cx="100" cy="62" rx="9" ry="32"/>
+        <ellipse cx="100" cy="62" rx="9" ry="32" transform="rotate(45 100 100)"/>
+        <ellipse cx="100" cy="62" rx="9" ry="32" transform="rotate(90 100 100)"/>
+        <ellipse cx="100" cy="62" rx="9" ry="32" transform="rotate(135 100 100)"/>
+        <ellipse cx="100" cy="62" rx="9" ry="32" transform="rotate(180 100 100)"/>
+        <ellipse cx="100" cy="62" rx="9" ry="32" transform="rotate(225 100 100)"/>
+        <ellipse cx="100" cy="62" rx="9" ry="32" transform="rotate(270 100 100)"/>
+        <ellipse cx="100" cy="62" rx="9" ry="32" transform="rotate(315 100 100)"/>
+      </g>
+      <circle cx="100" cy="100" r="8"/>
+      <circle cx="100" cy="100" r="58"/>
+    </g>
+    <g fill="#e0b95f" opacity=".85">
+      <circle cx="100" cy="38" r="2"/><circle cx="100" cy="162" r="2"/>
+      <circle cx="38" cy="100" r="2"/><circle cx="162" cy="100" r="2"/>
+      <circle cx="56" cy="56" r="2"/><circle cx="144" cy="56" r="2"/>
+      <circle cx="56" cy="144" r="2"/><circle cx="144" cy="144" r="2"/>
+      <circle cx="100" cy="100" r="2.6"/>
+    </g>
+  </svg>
+
+  <div class="wrap hero-inner">
+    <div class="rating-badge">&#9733; 4.8 <span>&middot; 39 Google reviews</span></div>
+    <p class="eyebrow">Native seed &middot; stone milled &middot; no polish, no chemicals</p>
+    <h1>Puvi Naturals<br/>and Organics</h1>
+    <p class="tamil-name">Organic shop in Kakkalur, Tamil Nadu</p>
+    <p class="lede">Heirloom rice varieties and organic provisions, sourced directly from native-seed farmers across Tamil Nadu — straight from the field to your kitchen.</p>
+    <div class="hero-ctas">
+      <a href="https://wa.me/917358033944" class="btn btn-solid">Order on WhatsApp</a>
+      <a href="#five" class="btn btn-outline">See our varieties</a>
+    </div>
+  </div>
+</section>
+
+<section class="featured" id="five">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Five you should know first</p>
+      <h2>Our signature varieties</h2>
+      <p>If you're new to native rice, start here. These five are the ones our customers ask for by name.</p>
+    </div>
+
+    <div class="five-grid">
+
+      <div class="grain-card">
+        <div class="swatch" style="background:var(--grain-black);">
+          <img src="images/karuppu-kavuni.png" alt="Karuppu Kavuni black rice in a wooden bowl" loading="lazy" />
+          <span class="grain-num">01</span>
+        </div>
+        <div class="card-body">
+          <h3>Karuppu Kavuni</h3>
+          <p class="tamil">Black rice</p>
+          <p>Deep purple-black heirloom grain, prized for its antioxidants. A Chettinad favourite for porridge and sweet dishes.</p>
+        </div>
+      </div>
+
+      <div class="grain-card">
+        <div class="swatch" style="background:var(--grain-red);">
+          <span class="grain-num">02</span>
+        </div>
+        <div class="card-body">
+          <h3>Mapillai Samba</h3>
+          <p class="tamil">The groom's rice</p>
+          <p>Long reddish grain, traditionally fed to grooms before weddings — valued for its iron and strength.</p>
+          <div class="photo-slot">PRODUCT PHOTO<br/>coming soon</div>
+        </div>
+      </div>
+
+      <div class="grain-card">
+        <div class="swatch" style="background:var(--grain-white);">
+          <span class="grain-num" style="color:#8a7e63;">03</span>
+        </div>
+        <div class="card-body">
+          <h3>Seeraga Samba</h3>
+          <p class="tamil">Cumin rice</p>
+          <p>Tiny, fragrant grains shaped like cumin seeds — the classic biryani rice of Tamil Nadu.</p>
+          <div class="photo-slot">PRODUCT PHOTO<br/>coming soon</div>
+        </div>
+      </div>
+
+      <div class="grain-card">
+        <div class="swatch" style="background:var(--grain-cream);">
+          <span class="grain-num" style="color:#6b5d35;">04</span>
+        </div>
+        <div class="card-body">
+          <h3>Thooyamalli</h3>
+          <p class="tamil">Fragrant heirloom</p>
+          <p>Short, aromatic grain once reserved for royal kitchens — an older cousin of basmati.</p>
+          <div class="photo-slot">PRODUCT PHOTO<br/>coming soon</div>
+        </div>
+      </div>
+
+      <div class="grain-card">
+        <div class="swatch" style="background:var(--grain-amber);">
+          <span class="grain-num">05</span>
+        </div>
+        <div class="card-body">
+          <h3>Kattuyanam</h3>
+          <p class="tamil">Ancient medicinal rice</p>
+          <p>A red-husked heirloom long used in Siddha medicine for its cooling, nourishing qualities.</p>
+          <div class="photo-slot">PRODUCT PHOTO<br/>coming soon</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="why" id="why">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Why it's worth seeking out</p>
+      <h2>Grown the slow way, on purpose</h2>
+    </div>
+    <div class="why-layout">
+      <div class="why-photo">
+        <img src="images/sourcing-hands.png" alt="A farmer's hands holding freshly harvested native rice grains" loading="lazy" />
+        <p class="why-caption">Every variety here starts in a farmer's hands, not a factory.</p>
+      </div>
+      <div class="principles">
+      <div class="principle">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#e0b95f" stroke-width="1.6"><path d="M12 2c4 4 4 9 0 13-4-4-4-9 0-13z"/><path d="M12 15v7"/></svg>
+        <h3>Native seed, preserved</h3>
+        <p>Every variety here is a true heirloom, not a hybrid — seeds passed down through farming families, not patented in a lab.</p>
+      </div>
+      <div class="principle">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#e0b95f" stroke-width="1.6"><path d="M4 4c8 0 16 4 16 16C12 20 4 12 4 4z"/></svg>
+        <h3>No chemical inputs</h3>
+        <p>No synthetic pesticide, no chemical fertiliser — grown the way paddy was grown before either existed.</p>
+      </div>
+      <div class="principle">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#e0b95f" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M8 12h8M12 8v8"/></svg>
+        <h3>Stone milled, not polished</h3>
+        <p>Husked gently to keep the bran and nutrition intact, instead of polishing it away for a whiter grain.</p>
+      </div>
+      <div class="principle">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#e0b95f" stroke-width="1.6"><path d="M3 20c2-6 6-9 9-9s7 3 9 9"/><circle cx="12" cy="7" r="3.2"/></svg>
+        <h3>Bought from small farmers</h3>
+        <p>Sourced directly from native-seed farmers across Tamil Nadu, at a fair price, with no middlemen in between.</p>
+      </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="reviews" id="reviews">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">From the shop's Google page</p>
+      <h2>What customers say</h2>
+      <p>4.8 out of 5, from 39 reviews — a few of them, in their own words.</p>
+    </div>
+    <div class="review-grid">
+      <div class="review-card">
+        <p class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+        <p>"Rice quality is wonderful. Easy to digest, no health issues. They are so dedicated in bringing awareness to people about organic food."</p>
+      </div>
+      <div class="review-card">
+        <p class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+        <p>"I have bought monthly groceries from Puvi. All the items are good and pure — idly rice, spices and coconut oil are worthy items."</p>
+      </div>
+      <div class="review-card">
+        <p class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+        <p>"The owners are aware of all the health benefits and you get educated about the origin of your purchased food. Worth a visit."</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="catalog" id="granary">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">All twelve, one granary</p>
+      <h2>Our full granary</h2>
+      <p>Beyond the five above, here is the rest of what we carry. Ask us about availability and pack sizes.</p>
+    </div>
+
+    <div class="catalog-grid">
+      <div class="catalog-item"><span class="dot"></span><span class="names"><span class="en">Mapillai Samba</span><span class="alt">Mappillai Chamba</span></span><span class="tag">iron-rich</span></div>
+      <div class="catalog-item"><span class="dot"></span><span class="names"><span class="en">Karuppu Kavuni</span></span><span class="tag">black rice</span></div>
+      <div class="catalog-item"><span class="dot"></span><span class="names"><span class="en">Kullakar</span></span><span class="tag">heirloom</span></div>
+      <div class="catalog-item"><span class="dot"></span><span class="names"><span class="en">Poongar</span></span><span class="tag">heirloom</span></div>
+      <div class="catalog-item"><span class="dot"></span><span class="names"><span class="en">Seeraga Samba</span></span><span class="tag">aromatic</span></div>
+      <div class="catalog-item"><span class="dot"></span><span class="names"><span class="en">Thooyamalli</span></span><span class="tag">aromatic</span></div>
+      <div class="catalog-item"><span class="dot"></span><span class="names"><span class="en">Kuzhiyadichan</span></span><span class="tag">heirloom</span></div>
+      <div class="catalog-item"><span class="dot"></span><span class="names"><span class="en">Karunguruvai</span></span><span class="tag">heirloom</span></div>
+      <div class="catalog-item"><span class="dot"></span><span class="names"><span class="en">Kattuyanam</span></span><span class="tag">medicinal</span></div>
+      <div class="catalog-item"><span class="dot"></span><span class="names"><span class="en">Illuppai Poo Samba</span></span><span class="tag">heirloom</span></div>
+      <div class="catalog-item"><span class="dot"></span><span class="names"><span class="en">Vadan Samba</span></span><span class="tag">heirloom</span></div>
+      <div class="catalog-item"><span class="dot"></span><span class="names"><span class="en">Sivappu Kavuni</span></span><span class="tag">red rice</span></div>
+    </div>
+
+    <div class="catalog-note">
+      Puvi Naturals and Organics also stocks other organic provisions beyond rice — message us on WhatsApp for what's currently in stock.
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#" class="logo">Puvi Naturals<span>and Organics</span></a>
+        <p>Organic, native-seed rice and provisions, rated 4.8&#9733; by 39 customers on Google.</p>
+      </div>
+      <div>
+        <h3>Order</h3>
+        <a href="https://wa.me/917358033944">WhatsApp: 073580 33944</a>
+        <a href="tel:07358033944">Call: 073580 33944</a>
+        <a href="#">Instagram: [add handle]</a>
+        <p class="line" style="margin-top:14px; color:rgba(243,234,211,.55); font-size:12.5px;">In-store shopping &middot; in-store pick-up &middot; delivery</p>
+      </div>
+      <div>
+        <h3>Visit</h3>
+        <p class="line">43/246, Anna Street, Rajaji Puram,<br/>Kakkalur, Tamil Nadu 602001</p>
+        <p class="line">Open daily, 9:00 AM &ndash; 9:00 PM</p>
+        <a href="https://www.google.com/maps/search/?api=1&query=Puvi+Naturals+and+Organics+Kakkalur+Tamil+Nadu">Get directions &rarr;</a>
+      </div>
+    </div>
+    <div class="bottom-bar wrap" style="padding-left:0; padding-right:0;">
+      <span>&copy; 2026 Puvi Naturals and Organics. All rights reserved.</span>
+      <span>Made with care for native seed.</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
